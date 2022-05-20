@@ -1,0 +1,166 @@
+﻿@using EntityLayer.Concrete
+@model List<ExamCategory>
+
+
+@{
+    ViewBag.Title = "ListExamCat";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+@{ string color = "";}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Sınav </title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <!-- Site wrapper -->
+    <!-- /.navbar -->
+    <!-- Main Sidebar Container -->
+
+
+
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+
+            </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card ">
+            <div class="card-header">
+                <h3 class="card-title font-weight-bold">Sınav Kategorileri</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-plus"></i>
+                    </button>
+
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%">
+                                #
+                            </th>
+                            <th style="width: 25%">
+                                Kategori Adı
+                            </th>
+                            <th style="width: 25%">
+                                Kategori Kontrolü
+                            </th>
+                            <th style="width: 25%">
+                                Kategoriye Ait Sınavlar
+                            </th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            //if (item.Category.CategoryName == "Konser")
+                            //{
+                            //    color = "badge badge-warning";
+                            //}
+                            //if (item.Category.CategoryName == "Motosiklet Turu")
+                            //{
+                            //    color = "badge badge-primary";
+                            //}
+                            //if (item.Category.CategoryName == "Üniversite")
+                            //{
+                            //    color = "badge badge-danger";
+                            //}
+                            //if (item.Category.CategoryName == "Spor")
+                            //{
+                            //    color = "badge badge-success";
+                            //}
+                            //if (item.Category.CategoryName == "Kulüpler")
+                            //{
+                            //    color = "badge badge-dark";
+                            //}
+
+
+                            <tr>
+                                <td>
+                                    @item.ExamCategoryID
+                                </td>
+
+
+                                <td>
+                                    @item.CategoryName
+                                </td>
+                           
+
+                                <td class="project-actions ">
+                                    <a class="btn btn-danger btn-danger" href="/AdminExam/DeleteExamCat/@item.ExamCategoryID">
+                                        <i class="fas fa-thumbs-down">
+                                        </i>
+                                        Pasif Yap
+                                    </a>
+                                </td>
+                                <td class="project-actions ">
+                                    <a class="btn btn-primary btn-warning" href="/AdminExam/ListQuestion/@item.ExamCategoryID">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Sınavlar
+                                    </a>
+                                </td>
+
+
+
+                            </tr>
+
+                        }
+
+
+
+                    </tbody>
+                </table>
+
+
+
+
+
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+    <!-- Main content -->
+    <!--<section class="content">-->
+    <!-- Default box -->
+</html>
+
+
+
+<a href="/AdminExam/AddExamCat/" class="btn btn-info"> Yeni Kategori Ekle </a>
+
+
+

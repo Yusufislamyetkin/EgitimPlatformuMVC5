@@ -1,0 +1,100 @@
+﻿@model EntityLayer.Concrete.ExamQuestion
+@{
+    ViewBag.Title = "AddQuestion";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/question.css">
+    <!-- Ionicons -->
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+
+
+<br />
+
+
+
+
+@using (Html.BeginForm("AddQuestion", "AdminExam", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="container mt-sm-5 my-1 ">
+        <div class="question ml-sm-5 pl-sm-5 pt-2">
+
+
+            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+
+
+
+                <p style="font-weight:bold;font-size:24px">@ViewBag.soru .Soru </p>  
+                <br />
+                <p style="font-weight:bold">Soru  </p>  
+                @Html.TextBoxFor(x => x.Question, new { @class = "form-control" })
+                <br />
+
+
+
+
+                <p style="font-weight:bold">A - )</p>   
+                @Html.TextBoxFor(x => x.A, new { @class = "form-control" })<br />
+                <p style="font-weight:bold">B - )</p>   
+                @Html.TextBoxFor(x => x.B, new { @class = "form-control" })<br />
+                <p style="font-weight:bold">C - )</p>  
+                @Html.TextBoxFor(x => x.C, new { @class = "form-control" })<br />
+                <p style="font-weight:bold">D - )</p>   
+                @Html.TextBoxFor(x => x.D, new { @class = "form-control" })<br />
+                <br />
+                <p style="font-weight:bold">Doğru Cevap</p>   <br />
+                @Html.TextBoxFor(x => x.CorrectAnswer, new { @class = "form-control" })
+
+
+                <br />
+                <p style="font-weight:bold">Soru Fotoğrafı </p>   <br />
+
+
+                <input type="file"
+                       id="QuestionImage"
+                       name="QuestionImage"
+                       placeholder="Soru İçin Fotoğraf Yükleyin"
+                       autofocus />
+                <br />
+
+                @Html.HiddenFor(x => x.ExamID)
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="d-flex align-items-center pt-3">
+
+            <div class="ml-auto mr-sm-5"> <button class="btn btn-success" type="submit">İleri</button> </div>
+        </div>
+    </div>
+
+
+}
+
+

@@ -1,0 +1,43 @@
+﻿@model EntityLayer.Concrete.Contact
+@{
+    ViewBag.Title = "ContactMeStudent";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+<link href="~/Extra/ContactForm.css" rel="stylesheet" />
+<div class="contact-clean">
+
+
+
+    @using (Html.BeginForm("ContactMeStudent", "ContactMe", FormMethod.Post))
+    {
+
+        <h2 class="text-center">İletişime Geçin</h2>
+        <div class="form-group"><input class="form-control" type="text" name="UserName" placeholder="İsim"></div>
+        @Html.ValidationMessageFor(x => x.UserName)
+        <br />
+        <div class="form-group"><input class="form-control" type="email" name="UserMail" placeholder="Email"></div>
+        @Html.ValidationMessageFor(x => x.UserMail)
+        <br />
+        <div class="form-group"><input class="form-control" type="text" name="Subject" placeholder="Konu"></div>
+        @Html.ValidationMessageFor(x => x.Subject)
+        <br />
+        <div class="form-group"><textarea class="form-control" name="Message" placeholder="Mesaj İçeriği" rows="14"></textarea></div>
+        @Html.ValidationMessageFor(x => x.Message)
+        <br />
+        <button class="btn btn-primary d-grid w-100" type="submit">Gönder</button>
+
+    }
+    <br />
+    @if (TempData["AlertMessage1"] != null)
+    {<div class="alert alert-dark ">
+            <strong style="margin-left:750px"> Başarılı ! </strong>@TempData["AlertMessage1"]
+        </div>
+
+    }
+    @if (TempData["AlertMessage2"] != null)
+    {<div class="alert alert-dark ">
+            <strong style="margin-left:750px"> Başarısız ! </strong>@TempData["AlertMessage2"]
+        </div>
+
+    }
+</div>

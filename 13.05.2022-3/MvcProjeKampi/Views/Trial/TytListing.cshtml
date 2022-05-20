@@ -1,0 +1,91 @@
+﻿@using EntityLayer.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TytDeneme>
+
+@{
+    ViewBag.Title = "TytListing";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+<title>TYT Deneme Sonuçları</title>
+<div style="background-color: white; border-radius: 5px; margin-top: 30px; margin-left:25px; margin-right:25px ">
+    <p style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans- serif; font-size: 20px; color: #8789FF;margin-top:14px; ">
+        TYT Deneme Sonuçları
+    </p>
+</div>
+<br />
+@if (TempData["AlertMessage"] != null)
+{<div class="alert alert-success ">
+        <strong style="margin-left:750px"> Başarılı ! </strong>@TempData["AlertMessage"]
+        <br />
+    </div>
+
+}
+
+@if (TempData["AlertMessageDelete"] != null)
+{<div class="alert alert-success ">
+        <strong style="margin-left:750px"> Başarılı ! </strong>@TempData["AlertMessageDelete"]
+        <br />
+    </div>
+
+}
+
+<div style="margin-top:30px; margin-right:25px;margin-left:25px;background-color:white;">
+    <table class="table" style="margin-top:30px; text-align:center;">
+        <thead class="table-light">
+            <tr>
+             
+                <th>Türkçe Net</th>
+                <th>Sosyal Net</th>
+                <th>Matematik Net</th>
+                <th>Fen Net</th>
+                <th>Toplam Net</th>
+                <th>Puan</th>
+                <th>Yayın</th>
+                <th>Tarih</th>
+                <th>Düzenle</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+            @foreach (var x in Model)
+            {
+                <tr>
+                  
+                    <td>@x.TurkNet</td>
+                    <td>@x.SosNet</td>
+                    <td>@x.MatNet</td>
+                    <td>@x.FenNet</td>
+                    <td>@x.TopNet</td>
+                    <td>@x.Puan</td>
+                    <td>@x.Yayın</td>
+                    <td>@x.Tarih</td>
+                    <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+
+                                <a class="dropdown-item" href="/Trial/TytTrialDelete/@x.ID"><i class="bx bx-trash me-1"></i> Sil</a>
+                                <a class="dropdown-item" href="/Trial/TytTrialUpdate/@x.ID"><i class="bx bx-pen me-1"></i> Düzenle</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="margin-left:30px">@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("TytListing", new { sayfa }))   </div>
+</div>
+
+
+
+<div style="text-align:center; border-radius:50px; margin-top:20px; margin-right:500px;">
+    <a class="btn rounded-pill btn-outline-primary" href="/Trial/TytTrialAdd/" style="margin-left:500px;">Yeni Deneme Sonucu Ekle</a>
+</div>
+
+
+
+

@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "SeeCalendar";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+
+<title>Planlarım</title>
+<div style="background-color: blueviolet; border-radius: 5px; margin-top: 30px; margin-left:25px; margin-right:25px ">
+    <p style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans- serif; font-size: 20px; color: white;margin-top:14px; ">
+        Planlarım
+    </p>
+</div>
+
+
+<div style="margin-top:30px; margin-right:25px;margin-left:25px;background-color:white;">
+    <table class="table" style="margin-top:30px; text-align:center; background-color:blueviolet; color:white">
+        <thead class="table-light">
+            <tr>
+                <th>Durum</th>
+                <th>Plan İçeriği</th>
+
+                <th>Tarih</th>
+                <th>Düzenle</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+            @if (ViewBag.ıdlisttrue != null)
+            {
+                foreach (var x in ViewBag.ıdlisttrue)
+                {
+                    <tr>
+
+
+                        <td> Başarılı </td>
+
+
+                        <td>@x.CalenderContent</td>
+
+                        <td> @x.CalendarDate</td>
+                        <td>
+                            <div class="dropdown"  style="color:white">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"  style="color:white">
+                                    <i  style="color:white" class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="/Calendar/Delete/@x.calendarID"><i class="bx bx-trash me-1"></i> Sil</a>
+                                    <a class="dropdown-item" href="/Calendar/ConvertToFalseCalendar/@x.calendarID"><i class="bx bx-recycle me-1"></i> Başarısız Olarak İşaretle</a>
+
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                }
+            }
+
+        </tbody>
+    </table>
+
+</div>
+
+
+<div style="margin-top:30px; margin-right:25px;margin-left:25px; color:white">
+    <table class="table" style="margin-top: 30px; text-align: center; color: white ;background-color:blueviolet" >
+        <thead class="table-light">
+            <tr>
+                <th>Durum</th>
+                <th>Plan İçeriği</th>
+
+                <th>Tarih</th>
+                <th>Düzenle</th>
+            </tr>
+        </thead>
+        <tbody class="table-border-bottom-0">
+            @if (ViewBag.ıdlistfalse != null)
+            {
+                foreach (var x in ViewBag.ıdlistfalse)
+                {
+                    <tr>
+                      
+                            <td> Başarısız </td>
+                        
+
+                        <td>@x.CalenderContent</td>
+
+                        <td>@x.CalendarDate</td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i  style="color:white" class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="/Calendar/Delete/@x.calendarID"><i class="bx bx-trash me-1"></i> Sil</a>
+                                    <a class="dropdown-item" href="/Calendar/ConvertToTrueCalendar/@x.calendarID"><i class="bx bx-recycle me-1"></i> Başarılı Olarak İşaretle</a>
+                                </div>
+                              
+                            </div>
+                        </td>
+
+                    </tr>
+
+                }
+            }
+
+        </tbody>
+    </table>
+
+</div>
+<br />  
+<div style="text-align:center; border-radius:50px; margin-top:20px; margin-right:500px;">
+    <a class="btn rounded-pill btn-outline-primary" href="/Calendar/Index/" style="margin-left:500px;">Yeni Plan Oluştur</a>
+</div>
+
+<br />
+<br />  

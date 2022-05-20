@@ -1,0 +1,179 @@
+﻿
+@{
+    ViewBag.Title = "TrialGraphs";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+
+<link href="~/Extra/graphs1.css" rel="stylesheet" />
+
+
+
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="col-md-4 border-right">
+            <div class="ratings text-center p-4 py-5"> <span style="font-weight: bold" class="badge bg-dark">En Yüksek 5 Deneme / TYT <i class="fa fa-star-o"></i></span> <span class="d-block about-rating"></span> <span class="d-block total-ratings"></span> </div>
+        </div>
+        <div class="row no-gutters">
+
+            @foreach (var item in ViewBag.studenttriallist)
+            {
+            <div class="col-md-4 border-right">
+                <div class="ratings text-center p-4 py-5"> <span class="badge bg-warning">Puan: @item.Puan <i class="fa fa-star-o"></i></span> <span class="d-block about-rating"></span> <span class="d-block total-ratings"></span> </div>
+                <div class="ratings text-center p-4 py-5"> <span class="badge bg-success">Yayın: @item.Yayın   <i class="fa fa-star-o"></i></span> <span class="d-block about-rating"></span> <span class="d-block total-ratings"></span> </div>
+
+            </div>
+
+                <div class="col-md-8">
+                    <div class="rating-progress-bars p-3">
+                        <div class="progress-1 align-items-center">
+
+
+                            <label style="font-weight:bold">Tyt Türkçe</label>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: @Convert.ToInt32((@item.TurkNet /2)+ (@item.TurkNet * 2))%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"> @item.TurkNet </div>
+                            </div>
+                            <br />
+                            <label style="font-weight:bold">Tyt Sosyal</label>
+                            <div class="progress">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width:  @Convert.ToInt32((@item.SosNet) * 5)%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @item.SosNet  </div>
+                            </div>
+                            <br />
+                            <label style="font-weight:bold">Tyt Mat</label>
+
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width:  @Convert.ToInt32(((@item.MatNet) /2) + (item.MatNet * 2))%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"> @item.MatNet  </div>
+                            </div>
+                            <br />
+                            <label style="font-weight:bold">Tyt Fen</label>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width:  @Convert.ToInt32((@item.FenNet)*5)%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"> @item.FenNet  </div>
+                            </div>
+
+                            <br />
+
+                        </div>
+                    </div>
+                    <hr style="color:orangered" />
+                </div>
+                
+            }
+
+
+        </div>
+
+    </div>
+</div>
+<br />  
+<br />  
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="col-md-4 border-right">
+            <div class="ratings text-center p-4 py-5"> <span style="font-weight: bold" class="badge bg-dark">En Yüksek 5 Deneme / AYT <i class="fa fa-star-o"></i></span> <span class="d-block about-rating"></span> <span class="d-block total-ratings"></span> </div>
+        </div>
+        <div class="row no-gutters">
+
+            @foreach (var item in ViewBag.studenttriallist2)
+            {
+                <div class="col-md-4 border-right">
+                    <div class="ratings text-center p-4 py-5"> <span class="badge bg-warning">Puan: @item.Puan <i class="fa fa-star-o"></i></span> <span class="d-block about-rating"></span> <span class="d-block total-ratings"></span> </div>
+                    <div class="ratings text-center p-4 py-5"> <span class="badge bg-success">Yayın: @item.Yayın <i class="fa fa-star-o"></i></span> <span class="d-block about-rating"></span> <span class="d-block total-ratings"></span> </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="rating-progress-bars p-3">
+                        <div class="progress-1 align-items-center">
+
+
+                            <label style="font-weight:bold">Ayt Edebiyat</label>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: @Convert.ToInt32((@item.EdebNet /2)+ (@item.EdebNet * 2))%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"> @item.EdebNet </div>
+                            </div>
+                            <br />
+                            <label style="font-weight:bold">Ayt Sosyal</label>
+                            <div class="progress">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width:  @Convert.ToInt32((@item.SosNet) * 5)%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @item.SosNet  </div>
+                            </div>
+                            <br />
+                            <label style="font-weight:bold">Ayt Mat</label>
+
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width:  @Convert.ToInt32(((@item.MatNet) /2) + (item.MatNet * 2))%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"> @item.MatNet  </div>
+                            </div>
+                            <br />
+                            <label style="font-weight:bold">Ayt Fen</label>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width:  @Convert.ToInt32((@item.FenNet)*5)%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"> @item.FenNet  </div>
+                            </div>
+                            <br />
+
+
+                        </div>
+                    </div>
+                    <hr style="color:orangered" />
+                </div>
+            }
+
+
+        </div>
+
+    </div>
+</div>
+
+<br />
+<br />
+
+@*<div class="container mt-5">
+        <div class="card">
+            <div class="row no-gutters">
+
+                <br />
+                <br />
+                <h2  style="margin-left:450px; font-weight:bold " >Tyt Deneme</h2>
+
+                @foreach (var item in ViewBag.studenttriallist)
+                {
+                    <div class="col-md-8">
+                        <div class="rating-progress-bars p-3">
+                            <div class="progress-1 align-items-center">
+
+
+                                <h5 style="font-weight:bold">@item.Yayın @item.Tarih</h5>
+
+
+                                <label style="font-weight:bold">Tyt Türkçe</label>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width:  @item.TurkNet;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="40"> @item.TurkNet </div>
+                                </div>
+
+                                <label style="font-weight:bold">Tyt Sosyal</label>
+                                <div class="progress">
+                                    <div class="progress-bar bg-dark" role="progressbar" style="width: @item.SosNet%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @item.SosNet  </div>
+                                </div>
+
+                                <label style="font-weight:bold">Tyt Mat</label>
+
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: @item.MatNet%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"> @item.MatNet  </div>
+                                </div>
+
+                                <label style="font-weight:bold">Tyt Fen</label>
+                                <div class="progress">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: @item.FenNet%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"> @item.FenNet  </div>
+                                </div>
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>*@

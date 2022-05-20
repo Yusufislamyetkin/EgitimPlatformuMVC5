@@ -1,0 +1,133 @@
+﻿@model  EntityLayer.Concrete.ExamQuestion
+
+@{
+    ViewBag.Title = "SeedQuiz";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+
+@{ string namecontrol = "";}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/question.css">
+    <!-- Ionicons -->
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed ">
+
+    <form method="post">
+        <div class="container mt-sm-5 my-1 ">
+            <div class="question ml-sm-5 pl-sm-5 pt-2">
+                @if (Model.Question == null)
+                {
+                    Model.Question = "";
+                }
+                @if (Model.A == null)
+                {
+                    Model.A = "";
+                }
+                @if (Model.B == null)
+                {
+                    Model.B = "";
+                }
+                @if (Model.C == null)
+                {
+                    Model.C = "";
+                }
+                @if (Model.D == null)
+                {
+                    Model.D = "";
+                }
+                @if (Model.CorrectAnswer == null)
+                {
+                    Model.CorrectAnswer = "";
+                }
+
+
+
+                @if (Model.QuestionImage == null)
+                {
+
+                }
+                else
+                {
+                    
+                    <a href="@Model.QuestionImage" target="_blank">
+                        <img src="@Model.QuestionImage" style="width:300px;height:150px"  />
+                    </a>
+                }
+                <br />
+                <br />
+                <div class="h3" style="color:white"><b> @ViewBag.count @Html.Label(Model.Question)</b></div>
+                <div class="" id="options">
+                    <p style="font-weight:bold">A - )</p>   <br />
+                    <label class="options"> @Html.Label(Model.A) <input type="radio" name="StudentAnswer" value="A"> <span class="checkmark"></span> </label>
+                    <p style="font-weight:bold">B - )</p>   <br />
+                    <label class="options">@Html.Label(Model.B) <input type="radio" name="StudentAnswer" value="B"> <span class="checkmark"></span> </label>
+                    <p style="font-weight:bold">C - )</p>   <br />
+                    <label class="options">@Html.Label(Model.C) <input type="radio" name="StudentAnswer" value="C"> <span class="checkmark"></span> </label>
+                    <p style="font-weight:bold">D - )</p>   <br />
+                    <label class="options">@Html.Label(Model.D) <input type="radio" name="StudentAnswer" value="D"> <span class="checkmark"></span> </label>
+                </div>
+
+
+
+
+
+
+
+                @Html.HiddenFor(x => x.CorrectAnswer)
+                @Html.HiddenFor(x => x.ExamID)
+                @Html.HiddenFor(x => x.ExamQuestionID)
+
+
+
+
+
+            </div>
+            <div class="d-flex align-items-center pt-3">
+
+                <div class="ml-auto mr-sm-5"> <button class="btn btn-success" type="submit">İleri</button> </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+    <div class="container">
+
+        <a href="#demo" class="btn btn-info" data-toggle="collapse">Cevabı Görmek İçin Tıklayın</a>
+        <div id="demo" class="collapse">
+            <br />
+
+            Soru Cevabı: <span style="font-weight:bold"> @ViewBag.correct</span>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+
+
+
+
+@*<div class="d-flex align-items-center pt-3">
+        <div id="prev"> <button class="btn btn-primary">Previous</button> </div>
+        <div class="ml-auto mr-sm-5"> <button class="btn btn-success">Next</button> </div>
+    </div>*@
+
+

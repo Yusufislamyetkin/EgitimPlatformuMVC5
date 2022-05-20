@@ -1,0 +1,75 @@
+﻿@using PagedList.Mvc
+@using PagedList
+@using EntityLayer.Concrete
+@model PagedList.PagedList<Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Mailbox</title>
+
+
+    <link href="~/Extra/seedquesscs.css" rel="stylesheet" />
+
+</head>
+<br />
+<br />
+<div class="row d-flex justify-content-center">
+    <br />
+    @if (TempData["Deleted"] != null)
+    {<div class="alert alert-success ">
+            <strong style="margin-left:750px"></strong>@TempData["Deleted"]
+        </div>
+
+    } 
+
+    <BR />
+    <div class="col-lg-6">
+        <br />
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <BR />
+
+
+
+                <div class="comment-widgets">
+
+                    <div class="d-flex flex-row comment-row m-t-0">
+                        <div class="p-2"><img src="/Extra/kalem.png" alt="user" width="40" class="rounded-circle"></div>
+
+                        <div class="comment-text w-100">
+                            <h6 class="card-title">Kimden : @item.UserMail</h6> <span class="m-b-15 d-block"> </span>
+                            <br />
+
+                            <h6 class="card-title">Gönderen Adı : </h6> <span class="m-b-15 d-block">@item.UserName </span>
+
+                            <h6 class="card-title">Konu : </h6> <span class="m-b-15 d-block">@item.Subject </span>
+
+                            <h6 class="card-title">Mesaj İçeriği : </h6> <span class="m-b-15 d-block">@item.Message </span>
+
+                            <h6 class="card-title">Mesaj Tarihi : </h6> <span class="m-b-15 d-block">@item.MessageDateT </span>
+
+                            <a href="/AdminContact/DeletedMessages/@item.ContactID" class="buttons btn btn-outline-danger">Sil</a>
+                         
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>}
+        @Html.PagedListPager((IPagedList)Model, p => Url.Action("/Index/", new { p }), new PagedListRenderOptions
+        {
+            LiElementClasses = new List<String> { "page-link" }
+            })
+    </div>
+</div>

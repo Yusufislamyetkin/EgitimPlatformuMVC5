@@ -1,0 +1,97 @@
+﻿@using EntityLayer.Concrete
+
+@model List<StudentExamResult>
+@{
+    ViewBag.Title = "MyQuizResults";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+
+
+}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+
+<title>Test Sonuçları</title>
+<div style="background-color: white; border-radius: 5px; margin-top: 30px; margin-left:25px; margin-right:25px ">
+    <p style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans- serif; font-size: 20px; color: #8789FF;margin-top:14px; ">
+        Test Sonuçları
+    </p>
+</div>
+<br />
+@if (TempData["AlertMessage"] != null)
+{<div class="alert alert-success ">
+        <strong style="margin-left:750px"> Başarılı ! </strong>@TempData["AlertMessage"]
+        <br />
+    </div>
+
+}
+
+@if (TempData["AlertMessageDelete"] != null)
+{<div class="alert alert-success ">
+        <strong style="margin-left:750px"> Başarılı ! </strong>@TempData["AlertMessageDelete"]
+        <br />
+    </div>
+
+}
+
+<div style="margin-top:30px; margin-right:25px;margin-left:25px;background-color:white;">
+    <table id="tbl1" class="table" >
+        <thead>
+            <tr>
+
+                <th>Sınav Adı</th>
+                <th>Sınav Kategori</th>
+                <th>Öğrenci Adı</th>
+                <th>Doğru Sayısı</th>
+                <th>Yanlış Sayısı</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+
+                    <td>@x.exams.ExamName</td>
+                    <td>@x.exams.Category.CategoryName</td>
+                    <td>@x.students.StudentName</td>
+                    <td>@x.StudentScore</td>
+                    <td>@x.StudentWrongScore</td>
+
+
+                    @*<td>
+                            <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+
+                                    <a class="dropdown-item" href="/Trial/TytTrialDelete/@x.ID"><i class="bx bx-trash me-1"></i> Sil</a>
+                                    <a class="dropdown-item" href="/Trial/TytTrialUpdate/@x.ID"><i class="bx bx-pen me-1"></i> Düzenle</a>
+                                </div>
+                            </div>
+                        </td>*@
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+
+<script>
+    $('#tbl1').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Turkish.json"
+        } });
+</script>
+
+

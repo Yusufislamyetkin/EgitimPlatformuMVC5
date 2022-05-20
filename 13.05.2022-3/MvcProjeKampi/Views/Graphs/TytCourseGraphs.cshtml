@@ -1,0 +1,509 @@
+﻿
+@{
+    ViewBag.Title = "TytCourseGraphs";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+<link href="~/Extra/graphs1.css" rel="stylesheet" />
+@{ string color = "";}
+<div class="container mt-5">
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-md-4 border-right">
+                <div class="ratings text-center p-4 py-5"> <span class="badge bg-success">TYT Konu Grafik <i class="fa fa-star-o"></i></span> <span class="d-block about-rating"></span> <span class="d-block total-ratings"></span> </div>
+            </div>
+            <div class="col-md-8">
+                <div class="rating-progress-bars p-3">
+                    <div class="progress-1 align-items-center">
+
+                        <label style="font-weight:bold">Tyt Türkçe</label>
+                        @if (@ViewBag.tytstaticticturk > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.tytstaticticturk > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.tytstaticticturk > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.tytstaticticturk > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.tytstaticticturk%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.tytstaticticturk  </div>
+                        </div>
+
+                        <label style="font-weight:bold">Tyt Tarih</label>
+
+                        @if (@ViewBag.tytstatictictar > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.tytstatictictar > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.tytstatictictar > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.tytstatictictar > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.tytstatictictar%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.tytstatictictar  </div>
+                        </div>
+
+                        <label style="font-weight:bold">Tyt Matematik</label>
+                        @if (@ViewBag.tytstaticticmat > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.tytstaticticmat > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.tytstaticticmat > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.tytstaticticmat > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.tytstaticticmat%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.tytstaticticmat</div>
+                        </div>
+
+                        <label style="font-weight:bold">Tyt Kimya</label>
+
+                        @if (@ViewBag.tytstatictickim > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.tytstatictickim > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.tytstatictickim > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.tytstatictickim > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.tytstatictickim%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.tytstatictickim </div>
+                        </div>
+
+                        <label style="font-weight:bold">Tyt Geometri</label>
+                        @if (@ViewBag.tytstaticticgeo > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.tytstaticticgeo > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.tytstaticticgeo > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.tytstaticticgeo > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.tytstaticticgeo%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.tytstaticticgeo  </div>
+                        </div>
+
+                        <label style="font-weight:bold">Tyt Fizik</label>
+                        @if (@ViewBag.tytstaticticfiz > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.tytstaticticfiz > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.tytstaticticfiz > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.tytstaticticfiz > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.tytstaticticfiz%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.tytstaticticfiz </div>
+                        </div>
+
+                        <label style="font-weight:bold">Tyt Felsefe</label>
+                        @if (@ViewBag.tytstaticticfel > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.tytstaticticfel > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.tytstaticticfel > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.tytstaticticfel > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.tytstaticticfel%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.tytstaticticfel </div>
+                        </div>
+
+                        <label style="font-weight:bold">Tyt Din</label>
+                        @if (@ViewBag.tytstaticticdin > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.tytstaticticdin > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.tytstaticticdin > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.tytstaticticdin > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.tytstaticticdin%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.tytstaticticdin </div>
+                        </div>
+
+                        <label style="font-weight:bold">Tyt Coğrafya</label>
+                        @if (@ViewBag.tytstaticticcog > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.tytstaticticcog > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.tytstaticticcog > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.tytstaticticcog > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.tytstaticticcog%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.tytstaticticcog  </div>
+                        </div>
+
+                        <label style="font-weight:bold">Tyt Biyoloji</label>
+                        @if (@ViewBag.tytstaticticbiyo > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.tytstaticticbiyo > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.tytstaticticbiyo > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.tytstaticticbiyo > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.tytstaticticbiyo%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.tytstaticticbiyo  </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-md-4 border-right">
+                <div class="ratings text-center p-4 py-5"> <span class="badge bg-success">Ayt Konu Grafik <i class="fa fa-star-o"></i></span> <span class="d-block about-rating"></span> <span class="d-block total-ratings"></span> </div>
+            </div>
+            <div class="col-md-8">
+                <div class="rating-progress-bars p-3">
+                    <div class="progress-1 align-items-center">
+
+                        <label style="font-weight:bold">Ayt Edebiyat</label>
+                        @if (@ViewBag.aytstaticticedeb > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.aytstaticticedeb > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.aytstaticticedeb > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.aytstaticticedeb > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.aytstaticticedeb%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.aytstaticticedeb  </div>
+                        </div>
+
+                        <label style="font-weight:bold">Ayt Tarih</label>
+
+                        @if (@ViewBag.aytstatictictar > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.aytstatictictar > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.aytstatictictar > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.aytstatictictar > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.aytstatictictar%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.aytstatictictar  </div>
+                        </div>
+
+                        <label style="font-weight:bold">Ayt Matematik</label>
+                        @if (@ViewBag.aytstaticticmat > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.aytstaticticmat > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.aytstaticticmat > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.aytstaticticmat > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.aytstaticticmat%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.aytstaticticmat</div>
+                        </div>
+
+                        <label style="font-weight:bold">Ayt Kimya</label>
+
+                        @if (@ViewBag.aytstatictickim > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.aytstatictickim > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.aytstatictickim > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.aytstatictickim > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.aytstatictickim%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.aytstatictickim </div>
+                        </div>
+
+                        <label style="font-weight:bold">Ayt Geometri</label>
+                        @if (@ViewBag.aytstaticticgeo > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.aytstaticticgeo > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.aytstaticticgeo > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.aytstaticticgeo > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.aytstaticticgeo%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.aytstaticticgeo  </div>
+                        </div>
+
+                        <label style="font-weight:bold">Ayt Fizik</label>
+                        @if (@ViewBag.aytstaticticfiz > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.aytstaticticfiz > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.aytstaticticfiz > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.aytstaticticfiz > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.aytstaticticfiz%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.aytstaticticfiz </div>
+                        </div>
+
+                        <label style="font-weight:bold">Ayt Felsefe</label>
+                        @if (@ViewBag.aytstaticticfel > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.aytstaticticfel > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.aytstaticticfel > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.aytstaticticfel > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.aytstaticticfel%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.aytstaticticfel </div>
+                        </div>
+
+                        <label style="font-weight:bold">Ayt Din</label>
+                        @if (@ViewBag.aytstaticticdin > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.aytstaticticdin > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.aytstaticticdin > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.aytstaticticdin > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.aytstaticticdin%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.aytstaticticdin </div>
+                        </div>
+
+                        <label style="font-weight:bold">Ayt Coğrafya</label>
+                        @if (@ViewBag.aytstaticticcog > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.aytstaticticcog > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.aytstaticticcog > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.aytstaticticcog > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.aytstaticticcog%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.aytstaticticcog  </div>
+                        </div>
+
+                        <label style="font-weight:bold">Ayt Biyoloji</label>
+                        @if (@ViewBag.aytstaticticbiyo > 80)
+                        {
+                            color = "bg-success";
+                        }
+                        else if (@ViewBag.aytstaticticbiyo > 60)
+                        {
+                            color = "bg-primary";
+                        }
+                        else if (@ViewBag.aytstaticticbiyo > 30)
+                        {
+                            color = "bg-warning";
+                        }
+                        else if (@ViewBag.aytstaticticbiyo > 0)
+                        {
+                            color = "bg-danger";
+                        }
+
+
+                        <div class="progress">
+                            <div class="progress-bar @color" role="progressbar" style="width:  @ViewBag.aytstaticticbiyo%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">  @ViewBag.aytstaticticbiyo </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />  
+<br />  

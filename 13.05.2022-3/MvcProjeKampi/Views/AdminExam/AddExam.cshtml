@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Exam
+@{
+    ViewBag.Title = "AddExam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2 style="text-align:center">Sınav Ekle</h2>
+<br />
+
+@using (Html.BeginForm("AddExam", "AdminExam", FormMethod.Post))
+{
+<div>
+    <br />
+
+    @*@Html.Label("Yazar ID")
+        @Html.TextBoxFor(x => x.StudentID, new { @class = "form-control" })*@
+    @Html.HiddenFor(x => x.ExamID)
+
+    @Html.Label("Sınav Adı")
+    @Html.TextBoxFor(x => x.ExamName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Sınav Kategori")
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.VE, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("*Sınavdaki soru sayısı 10'a tamamlanmazsa sisteme eklenmeyecektir!")
+    <br />
+    <br />
+</div>
+     
+    <button class="btn btn-info">Kaydet</button>
+
+}
+

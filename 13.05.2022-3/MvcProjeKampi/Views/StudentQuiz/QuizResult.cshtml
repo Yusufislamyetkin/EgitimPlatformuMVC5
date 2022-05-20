@@ -1,0 +1,49 @@
+﻿@using EntityLayer.Concrete
+@model StudentExamResult
+@{
+    ViewBag.Title = "QuizResult";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+
+
+<link href="~/hiddenpanel.css" rel="stylesheet" />
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-9">
+            <div id="carousel-1" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="border rounded">
+                            <div class="row no-gutters">
+                                <div class="col-md-5"><img class="img-fluid profile" src="~/Extra/studenttt.jpg" height="300"></div>
+                                <div class="col-md-7">
+                                    <div class="bg-white p-2 px-3 testimonials">
+                                        <br />
+                                        <p class="h5" style=" color:blueviolet ">Bırakma. Şimdi acı çek ve hayatının geri kalanını bir şampiyon olarak yaşa.</p>
+                                        <p class="h6" style=" color:blueviolet "> Sen aklına koyduğun her şeyi başarırsın, senin inanılmaz bir gücün var. <br></p>
+                                        <br />
+                                        <br />
+                                        <div class="d-flex justify-content-between stats border p-2">
+                                            <div class="d-flex flex-column align-items-center"><span class="font-weight-bold percentage text-danger"> @ViewBag.wrong %</span><span>Yanlış Cevap</span></div>
+                                            <div class="d-flex flex-column align-items-center"><span class="font-weight-bold percentage text-success"> @ViewBag.truecount %</span><span>Doğru Cevap</span></div>
+
+                                        </div>
+                                      
+                                        <br />  
+                                      
+                                        <a href="/StudentQuiz/AytListQuiz/">
+                                            <div style="background-color: #696CFF; color: snow; border-radius: 10px; text-align: center; font-weight: bold; font-size: 12px;">
+                                                <div class="card-body">Test Çözmeye Devam Et</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

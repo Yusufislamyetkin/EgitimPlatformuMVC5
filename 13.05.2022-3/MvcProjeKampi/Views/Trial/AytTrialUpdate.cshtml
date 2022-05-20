@@ -1,0 +1,115 @@
+﻿@model EntityLayer.Concrete.AytDeneme
+
+@{
+    ViewBag.Title = "AytTrialUpdate";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+
+<title>AYT Deneme Sonucu Güncelle</title>
+<div style="background-color: #E9ECEF; border-radius: 5px; margin-top: 30px; margin-left:60px; margin-right:60px ">
+    <p style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans- serif; font-size: 20px; color: #8789FF;margin-top:14px; ">
+        AYT Deneme Sonucu Güncelle
+    </p>
+</div>
+
+<form method="post">
+    <div class="form-group" style="margin-left:275px;">
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF;">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Edebiyat Net</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+                @Html.TextBoxFor(x => x.EdebNet, new { @class = "form-control", @placeholder = "0,00" })
+                @Html.ValidationMessageFor(x => x.EdebNet)
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Sosyal Net</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+                @Html.TextBoxFor(x => x.SosNet, new { @class = "form-control", @placeholder = "0,00" })
+                @Html.ValidationMessageFor(x => x.SosNet)
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Matematik Net</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+                @Html.TextBoxFor(x => x.MatNet, new { @class = "form-control", @placeholder = "0,00" })
+                @Html.ValidationMessageFor(x => x.MatNet)
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Fen Net</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+                @Html.TextBoxFor(x => x.FenNet, new { @class = "form-control", @placeholder = "0,00" })
+                @Html.ValidationMessageFor(x => x.FenNet)
+            </div>
+        </div>
+        <br />
+    </div>
+
+    @*Sağ kısım*@
+
+    <div class="form-group" style="margin-left:775px;margin-right:50px;margin-top:-535px;">
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Toplam Net</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+                @Html.TextBoxFor(x => x.TopNet, new { @class = "form-control", @placeholder = "0,00" })
+                @Html.ValidationMessageFor(x => x.TopNet)
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Puan</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+                @Html.TextBoxFor(x => x.Puan, new { @class = "form-control", @placeholder = "000,000" })
+                @Html.ValidationMessageFor(x => x.Puan)
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Yayın</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+                @Html.TextBoxFor(x => x.Yayın, new { @class = "form-control", @placeholder = "Örnek: Final" })
+                @Html.ValidationMessageFor(x => x.Yayın)
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Tarih</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px; margin-top:-5px;">
+                @Html.TextBoxFor(x => x.Tarih, new { type = "date", @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Tarih)
+            </div>
+        </div>
+        <br />
+        @Html.HiddenFor(x => x.ID)
+
+    </div>
+
+    <div style="text-align:center">
+        <a class="btn rounded-pill btn-outline-dark" style="width:125px; height:40px;" href="/Trial/AytListing/">GERİ</a>
+        <button class="btn rounded-pill btn-outline-success" style="width:125px; height:40px;">Güncelle</button>
+    </div>
+    <br />
+</form>
+
+

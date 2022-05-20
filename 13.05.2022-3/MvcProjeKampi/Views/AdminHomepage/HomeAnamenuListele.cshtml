@@ -1,0 +1,15 @@
+﻿@using EntityLayer.Concrete
+@model List<HomeAnamenu>
+
+
+<section id="hero" class="d-flex align-items-center">
+    @foreach (var x in Model)
+    {
+        <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+            <h1>@x.Baslik</h1>
+            <h2>@x.Aciklama</h2>
+            <a href="/Login/GirisYap/" class="btn-get-started scrollto">Hadi Başlayalım</a>
+            <img src="~/Login/assets/img/hero-img.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+        </div>
+    }
+</section><!-- End Hero -->

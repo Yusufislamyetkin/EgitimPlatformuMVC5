@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.ExamCategory
+@{
+    ViewBag.Title = "AddExamCat";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Ekle</h2>
+
+@using (Html.BeginForm("AddExamCat", "AdminExam", FormMethod.Post))
+{
+    <div>
+
+
+        @*@Html.Label("Yazar ID")
+            @Html.TextBoxFor(x => x.StudentID, new { @class = "form-control" })*@
+        @Html.HiddenFor(x => x.ExamCategoryID)
+
+        <br />
+        @Html.Label("Kategori Adı ")
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+
+        <br />
+
+    </div>
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+}
+

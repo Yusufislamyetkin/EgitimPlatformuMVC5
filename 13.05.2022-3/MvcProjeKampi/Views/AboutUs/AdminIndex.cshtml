@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.AboutUs
+
+@{
+    ViewBag.Title = "AdminIndex";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AdminIndex", "AboutUs", FormMethod.Post))
+
+{
+    <h4>İçerik</h4>
+    @Html.TextAreaFor(x => x.Content, new { @class = "form-control" });
+    <br />
+    <h5>İnstagram Link</h5>
+    @Html.TextBoxFor(x => x.instagramlink, new { @class = "form-control" });
+    <h5>Pinterest Link</h5>
+    @Html.TextBoxFor(x => x.pinterestlink, new { @class = "form-control" });
+    <h5>Whatsapp Link</h5>
+    @Html.TextBoxFor(x => x.whatsapplink, new { @class = "form-control" });
+    <h5>Youtube Link</h5>
+    @Html.TextBoxFor(x => x.youtubelink, new { @class = "form-control" });
+    <h5>Facebook Link</h5>
+    @Html.TextBoxFor(x => x.facebooklink, new { @class = "form-control" });
+    <br />
+    <button class="btn btn-info"> Güncelle </button>
+
+
+}
+<br />
+@if (TempData["Güncelleme"] != null)
+{
+    <div class="alert alert-info ">
+        <strong style="margin-left:750px"> Başarılı ! </strong>@TempData["Güncelleme"]
+    </div>
+}

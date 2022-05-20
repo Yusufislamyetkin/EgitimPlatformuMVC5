@@ -1,0 +1,146 @@
+﻿@model EntityLayer.Concrete.TytDeneme
+
+@{
+    ViewBag.Title = "TytTrialAdd";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+
+<title>TYT Deneme Sonucu Ekle</title>
+<div style="background-color: #E9ECEF; border-radius: 5px; margin-top: 30px; margin-left:60px; margin-right:60px ">
+    <p style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans- serif; font-size: 20px; color: #8789FF;margin-top:14px; ">
+        TYT Deneme Sonucu Ekle
+    </p>
+</div>
+<form method="post" style="margin:auto">
+    <div class="form-group">
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF;">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Türkçe Net</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+
+                <input type="text" id="s1" name="TurkNet" class="form-control" />
+                @Html.ValidationMessageFor(x => x.TurkNet)
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Sosyal Net</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+
+                <input type="text" id="s2" name="SosNet" class="form-control" />
+                @Html.ValidationMessageFor(x => x.SosNet)
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Matematik Net</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+
+                <input type="text" id="s3" name="MatNet" class="form-control" />
+                @Html.ValidationMessageFor(x => x.MatNet)
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Fen Net</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+
+                <input type="text" id="s4" name="FenNet" class="form-control" />
+                @Html.ValidationMessageFor(x => x.FenNet)
+            </div>
+        </div>
+        <br />
+    </div>
+
+    @*Sağ kısım*@
+
+    <div class="form-group" style="margin-left:775px;margin-right:50px;margin-top:-535px;">
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Toplam Net</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+
+                <div class="form-control" id="sonuc">   </div>
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Puan</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+
+                <div class="form-control" id="Puansonuc">   </div>
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Yayın</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px;">
+                @Html.TextBoxFor(x => x.Yayın, new { @class = "form-control", @placeholder = "Örnek: Final" })
+                @Html.ValidationMessageFor(x => x.Yayın)
+            </div>
+        </div>
+        <br />
+        <div style=" width: 525px; height:100px; background-color:#E9ECEF  ">
+            <div style="margin-top:5px;">
+                <p style="font-family:Corbel;font-size:20px; text-align:center;">Tarih</p>
+            </div>
+            <div style="margin-left:50px; margin-right:50px; margin-top:-5px;">
+                @Html.TextBoxFor(x => x.Tarih, new { type = "date", @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Tarih)
+            </div>
+        </div>
+        <br />
+
+    </div>
+
+    <div style="text-align:center">
+        <a class="btn rounded-pill btn-outline-dark" style="width:125px; height:40px;" href="/Trial/TytListing/">GERİ</a>
+        <button class="btn rounded-pill btn-outline-success" style="width:125px; height:40px;">EKLE</button>
+    </div>
+    <br />
+    @*<input type="text" id="s1"  />
+        <input type="text" id="s2"  />*@
+</form>
+@*<div id="sonuc"></div>*@
+
+<script>
+
+    var sayi1 = document.getElementById("s1");
+    var sayi2 = document.getElementById("s2");
+    var sayi3 = document.getElementById("s3");
+    var sayi4 = document.getElementById("s4");
+    var sonuc = document.getElementById("sonuc");
+    var Puansonuc = document.getElementById("Puansonuc");
+
+
+    function hesapla() {
+        var toplam = Number(sayi1.value) + Number(sayi2.value) + Number(sayi3.value) + Number(sayi4.value);
+        sonuc.innerHTML = toplam;
+        var toplam2 = (Number(sayi1.value) * (3.3)) + (Number(sayi2.value) * (3.4)) + (Number(sayi3.value) * (3.3)) + (Number(sayi4.value) * (3.4)) + 100;
+        Puansonuc.innerHTML = toplam2;
+    }
+  
+
+    sayi1.oninput = hesapla;
+    sayi2.oninput = hesapla;
+    sayi3.oninput = hesapla;
+    sayi4.oninput = hesapla;
+
+
+
+</script>
+

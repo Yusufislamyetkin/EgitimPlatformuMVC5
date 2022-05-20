@@ -1,0 +1,76 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+
+
+@{
+    ViewBag.Title = "CategorySelect";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+
+
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="card card-solid">
+            <div class="card-body pb-0">
+                <div class="row d-flex align-items-stretch">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                            <div class="card bg-light">
+                                <div class="card-header text-muted border-bottom-0 font-weight-bold">
+                                    @item.CategoryName
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="row">
+                                        <div class="col">
+                                           
+                                            <p class="text-muted text-sm"><b>Açıklama: </b> @item.CategoryDescription</p>
+                                          
+                                        </div>
+                                        <div class="col-5 text-center">
+                                            <img src="@item.Categoryimages" width="170" height="150" alt="" class="card-img-bottom  img-bordered">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="text-right">
+                                        <a href="~/Discover/CategorySelectList/@item.CategoryID" class="btn btn-sm bg-teal">
+                                            <i class="fas fa-comments">Başlıklara Git</i>
+                                        </a>
+                                        <a href="~/Discover/CategorySelect/@item.CategoryID" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-user"></i> İçeriklere Git
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>

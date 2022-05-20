@@ -1,0 +1,350 @@
+﻿
+@{
+    ViewBag.Title = "AytCourseStatistic";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "TytCourseStatistic";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+
+
+<title>AYT Konu İstatistiği</title>
+<div style="background-color: white; border-radius: 5px; margin-top: 30px; margin-left:60px; margin-right:100px ">
+    <p style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans- serif; font-size: 20px; color: #8789FF; margin-top: 14px; font-weight: bold ">
+        AYT Konu İstatistiği
+    </p>
+</div>
+<link rel="stylesheet" href="~/Web2/assets/vendor/css/core.css" class="template-customizer-core-css" />
+<link rel="stylesheet" href="~/Web2/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+<script src="~/Web2/assets/vendor/js/bootstrap.js"></script>
+
+<div class="row" style="margin-top:30px; margin-left:50px;margin-right:50px;">
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:225px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/turkce.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Türkçe</span>
+                <h3 class="card-title mb-2">% @ViewBag.aytstaticticedeb</h3>
+
+                <div style="background-color: #E3F8D7; width: 65px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-size:24px;">@ViewBag.aytfinishedcountedeb</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 65px; height: 40px; margin-left: 85px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytnotfinishedcountedeb</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:225px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/mat.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Matematik</span>
+                <h3 class="card-title mb-2">% @ViewBag.aytstaticticmat</h3>
+
+                <div style="background-color: #E3F8D7; width: 65px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytfinishedcountmat</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 65px; height: 40px; margin-left: 85px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytnotfinishedcountmat</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:225px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/geo.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Geometri</span>
+                <h3 class="card-title mb-2">% @ViewBag.aytstaticticgeo</h3>
+
+                <div style="background-color: #E3F8D7; width: 65px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytfinishedcountgeo</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 65px; height: 40px; margin-left: 85px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytnotfinishedcountgeo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:225px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/fiz.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Fizik</span>
+                <h3 class="card-title mb-2">% @ViewBag.aytstaticticfiz</h3>
+
+                <div style="background-color: #E3F8D7; width: 65px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytfinishedcountfiz</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 65px; height: 40px; margin-left: 85px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytnotfinishedcountfiz</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:225px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/kim.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Kimya</span>
+                <h3 class="card-title mb-2">% @ViewBag.aytstatictickim</h3>
+
+                <div style="background-color: #E3F8D7; width: 65px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytfinishedcountkim</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 65px; height: 40px; margin-left: 85px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytnotfinishedcountkim</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:225px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/biyo.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Biyoloji</span>
+                <h3 class="card-title mb-2">% @ViewBag.aytstaticticbiyo</h3>
+
+                <div style="background-color: #E3F8D7; width: 65px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytfinishedcountbiyo</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 65px; height: 40px; margin-left: 85px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytnotfinishedcountbiyo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:225px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/tar.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Tarih</span>
+                <h3 class="card-title mb-2">% @ViewBag.aytstatictictar</h3>
+
+                <div style="background-color: #E3F8D7; width: 65px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytfinishedcounttar</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 65px; height: 40px; margin-left: 85px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytnotfinishedcounttar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:225px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/cog.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Coğrafya</span>
+                <h3 class="card-title mb-2">% @ViewBag.aytstaticticcog</h3>
+
+                <div style="background-color: #E3F8D7; width: 65px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytfinishedcountcog</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 65px; height: 40px; margin-left: 85px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytnotfinishedcountcog</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:225px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/din.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Din Kültürü</span>
+                <h3 class="card-title mb-2">% @ViewBag.aytstaticticdin</h3>
+
+                <div style="background-color: #E3F8D7; width: 65px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytfinishedcountdin</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 65px; height: 40px; margin-left: 85px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytnotfinishedcountdin</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:225px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/fel.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Felsefe</span>
+                <h3 class="card-title mb-2">% @ViewBag.aytstaticticfel</h3>
+
+                <div style="background-color: #E3F8D7; width: 65px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytfinishedcountfel</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 65px; height: 40px; margin-left: 85px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.aytnotfinishedcountfel</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="col-lg-6 col-md-12 col-6 mb-4" style="width:375px;height:250px;">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/SAY.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Sayısal Dersleri</span>
+                <h3 class="card-title mb-2">% @ViewBag.s</h3>
+
+                <div style="background-color: #E3F8D7; width: 125px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.saybit</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 125px; height: 40px; margin-left: 160px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.saykal</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:375px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/EA.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Eşit Ağırlık Dersleri</span>
+                <h3 class="card-title mb-2">% @ViewBag.ea</h3>
+
+                <div style="background-color: #E3F8D7; width: 125px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.eabit</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 125px; height: 40px; margin-left: 160px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.eakal</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-6 mb-4" style="width:375px;height:250px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title d-flex align-items-start justify-content-between">
+                    <div class="avatar flex-shrink-0">
+                        <img src="~/Extra/elements/SÖZ.png"
+                             alt="chart success"
+                             class="rounded" />
+                    </div>
+
+                </div>
+                <span class="fw-semibold d-block mb-1">Sözel Dersleri</span>
+                <h3 class="card-title mb-2">% @ViewBag.soz</h3>
+
+                <div style="background-color: #E3F8D7; width: 125px; height: 40px; margin-left: 5px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.sozbit</p>
+                </div>
+                <div style="background-color: #FFD8D2; width: 125px; height: 40px; margin-left: 160px; margin-top: -40px;">
+                    <p style="text-align:center;font-family:Arial;font-size:24px;">@ViewBag.sozkal</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+

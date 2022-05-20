@@ -1,0 +1,63 @@
+﻿@model EntityLayer.Concrete.Student
+@{
+    ViewBag.Title = "AddWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yazar Ekle</h2>
+
+@using (Html.BeginForm("AddStudent", "AdminStudent", FormMethod.Post))
+{
+<div>
+
+
+    @*@Html.Label("Yazar ID")
+        @Html.TextBoxFor(x => x.StudentID, new { @class = "form-control" })*@
+    @Html.HiddenFor(x => x.StudentID)
+
+    <br />
+    @Html.Label("Öğrenci Meslek")
+    @Html.TextBoxFor(x => x.StudentTitle, new { @class = "form-control" })
+    <div style="color:red">@Html.ValidationMessageFor(x => x.StudentName)</div>
+    <br />
+    @Html.Label("Öğrenci Ad")
+    @Html.TextBoxFor(x => x.StudentName, new { @class = "form-control" })
+    <div style="color:red">@Html.ValidationMessageFor(x => x.StudentName)</div>
+    <br />
+    @Html.Label("Öğrenci Soyad")
+    @Html.TextBoxFor(x => x.StudentSurname, new { @class = "form-control" })
+    <div style="color:red"> @Html.ValidationMessageFor(x => x.StudentSurname)</div>
+    <br />
+    @Html.Label("Öğrenci Fotoğraf")
+    @Html.TextBoxFor(x => x.StudentImage, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Öğrenci Mail")
+    @Html.TextBoxFor(x => x.StudentEmail, new { @class = "form-control" })
+    <div style="color:red">
+        @Html.ValidationMessageFor(x => x.StudentEmail)
+    </div>
+    <br />
+    @Html.Label("Öğrenci Şifre")
+    @Html.TextBoxFor(x => x.StudentPassword, new { @class = "form-control" })
+    <br />
+    @Html.Label("Öğrenci Hakkında")
+    @Html.TextAreaFor(x => x.StudentAbout, new { @class = "form-control" })
+    <div style="color:red">
+        @Html.ValidationMessageFor(x => x.StudentAbout)
+    </div>
+    @Html.Label("Öğrenci Güvenlik Sorusu")
+    @Html.TextBoxFor(x => x.SecurityQuestion, new { @class = "form-control" })
+    <br />
+
+
+
+    <br />
+
+
+</div>
+
+    <button class="btn btn-info">Kaydet</button>
+
+}
+

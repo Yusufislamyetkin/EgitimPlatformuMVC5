@@ -1,0 +1,204 @@
+﻿@using EntityLayer.Concrete
+@model List<Exam>
+
+@{
+    ViewBag.Title = "ListExam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@{ string color = "";}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Sınav </title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <!-- Site wrapper -->
+    <!-- /.navbar -->
+    <!-- Main Sidebar Container -->
+
+
+
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+
+            </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <br />
+            <div class="card-body p-0">
+                <table id="tbl1" class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%">
+                                #
+                            </th>
+                            <th style="width: 18%">
+                                Sınav Adı
+                            </th>
+                            <th style="width: 18%">
+                                Sınav Eklenme Tarihi
+                            </th>
+                            <th style="width: 18%">
+                                Sınav Kategorisi
+                            </th>
+
+                            <th style="width: 18%">
+
+                                Sınav Kontrolü
+                            </th>
+                            <th style="width: 18%">
+                                Sınav Soruları
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            //if (item.Category.CategoryName == "Konser")
+                            //{
+                            //    color = "badge badge-warning";
+                            //}
+                            //if (item.Category.CategoryName == "Motosiklet Turu")
+                            //{
+                            //    color = "badge badge-primary";
+                            //}
+                            //if (item.Category.CategoryName == "Üniversite")
+                            //{
+                            //    color = "badge badge-danger";
+                            //}
+                            //if (item.Category.CategoryName == "Spor")
+                            //{
+                            //    color = "badge badge-success";
+                            //}
+                            //if (item.Category.CategoryName == "Kulüpler")
+                            //{
+                            //    color = "badge badge-dark";
+                            //}
+
+
+                            <tr>
+                                <td>
+                                    @item.ExamID
+                                </td>
+
+
+                                <td>
+                                    @item.ExamName
+                                </td>
+                                @*<td>
+                                        <ul class="list-inline text-left">
+                                            <li class="list-inline-item text-left">
+                                                <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage" />
+                                            </li>
+                                        </ul>
+                                        <p class="font-weight-bold text-left"> @item.Writer.WriterName</p>
+                                    </td>*@
+                                <td>
+                                    @item.ExamDate
+                                </td>
+                                <td>
+                                    @item.Category.CategoryName
+                                </td>
+
+                                <td class="project-actions ">
+                                    <a class="btn btn-danger btn-danger" href="/AdminExam/DeleteExam/@item.ExamID">
+                                        <i class="fas fa-thumbs-down">
+                                        </i>
+                                        Sil
+                                    </a>
+                                </td>
+                                <td class="project-actions ">
+                                    <a class="btn btn-primary btn-warning" href="/AdminExam/SeedQues/@item.ExamID">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Soruları Gör
+                                    </a>
+                                </td>
+
+
+
+                            </tr>
+
+                        }
+
+
+
+                    </tbody>
+                </table>
+
+
+
+
+
+            </div>
+            <!-- /.card-body -->
+        </div>
+
+        @if (TempData["AlertMessage1"] != null)
+        {<div class="alert alert-info">
+                <strong style="margin-left:600px;color:black;font-weight:bold"> Başarılı ! @TempData["AlertMessage1"]</strong>
+            </div>
+
+        }
+        @if (TempData["AlertMessage2"] != null)
+        {<div class="alert alert-info">
+                <strong style="margin-left:600px;color:black;font-weight:bold"> Başarısız ! @TempData["AlertMessage2"]</strong>
+            </div>
+
+        }
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+    <!-- Main content -->
+    <!--<section class="content">-->
+    <!-- Default box -->
+</html>
+
+
+
+<a href="/AdminExam/AddExam/" class="btn btn-info"> Yeni Sınav Ekle </a>
+
+
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+
+<script>
+    $('#tbl1').dataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Turkish.json"
+        }
+    });
+</script>
+

@@ -1,0 +1,63 @@
+﻿
+@model EntityLayer.Concrete.calendar
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StudentHome.cshtml";
+}
+
+
+<link href="~/Extra/headingaddfor.css" rel="stylesheet" />
+
+
+<div class="container mt-xl-5 mb-5">
+    <div class="d-flex justify-content-center pt-5">
+        <h2 class="font-weight-bold " style="color:white">Plan Oluşturalım !</h2>
+    </div>
+
+    <br />
+
+    <div class="d-flex flex-row justify-content-center">
+    
+
+        @using (Html.BeginForm("Index", "Calendar", FormMethod.Post))
+        {
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <BR />
+
+                        @Html.TextBoxFor(x => x.CalendarDate, new { type = "date", @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.CalendarDate)
+
+                        <br />
+
+
+                    </div>
+                    <br />
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        
+                            <div class="input-field bg-light"> <textarea name="CalenderContent" id="msg" cols="10" rows="9" class="form-control bg-light" placeholder="Planınız ne ?"></textarea> </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="d-flex flex-row justify-content-center w-100"> <input type="submit" value="Gönder" class="btn"> </div>
+                    @*<button class="d-flex flex-row justify-content-center w-100" type="submit">Gönder</button>*@
+
+                </div>
+            </div>
+        }
+    </div>
+    <br />
+    <br />
+
+    @if (TempData["AlertMessageCalendar"] != null)
+    {<div class="alert alert-success">
+            <strong style="margin-left:600px;color:blueviolet;font-weight:bold"> Başarılı ! @TempData["AlertMessageCalendar"]</strong>
+        </div>
+
+    }
+</div>
+
+
